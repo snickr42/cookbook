@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Recipe - Summary{% endblock %}</h1>
+{% endblock %}
+
+
+{% block content %}
+<h2> {{rec_tbl[1]}}:</h2>  
+<ul style="list-style-type:circle;">
+  <li><b>Description:</b> {{rec_tbl[2]}}</li>
+  <li><b>Cook Time:</b> {{rec_tbl[3]}} min</li>
+  <li><b>Cook Temp:</b> {{rec_tbl[4]}} F</li>
+  <li><b>Servings:</b> {{rec_tbl[5]}}</li>
+  <li><b>Notes:</b> {{rec_tbl[6]}}</li>
+  <li><b>Origin:</b> {{rec_tbl[7]}}</li>
+</ul>
+
+<div></div>
+<h2> Ingredients:</h2>
+  {%for ing in ing_tbl %}
+    <ul style="list-style-type:circle;">
+	    <li>{{ing.quantity}} {{ing.unit2}}    {{ing.ingredient}}</li>
+    </ul>
+  {% endfor %}
+
+
+<div></div>
+<h2> Steps:</h2>
+  {%for stp in step_tbl %}
+  <ol style="list-style-type:none;">
+    <li>{{stp.step}}:   {{stp.description}}</li>
+  </ol>
+  {% endfor %}
+
+
+{% endblock %}

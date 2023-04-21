@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}TOL - SYSTEM/NE Release{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<form id="btn_form" action="/tol" method='GET'>
+<button id="enter_btn" type="submit" >TOL List</button>
+</form>
+<table class="sortable" id="sys_table">
+  <tr>
+    <th>Major_Release</th>
+    <th>Minor_Release</th>
+    <th>SW_Version</th>
+    <th>SW_ID</th>
+    <th>system</th>
+    <th>env</th>
+    <th>enter_date</th>
+    <th>exit_date</th>
+    <th>TOL Notes</th>
+    <th>TOL_ID</th>
+  </tr>
+{% for tmp in sys_tbl %}
+  <tr>
+    <td>{{tmp.major_release }}</td>
+    <td>{{ tmp.minor_release }}</td>
+    <td>{{ tmp.sw_version }}</td>
+    <td>{{ tmp.sw_id }}</td>
+    <td>{{ tmp.system }}</td>
+    <td>{{ tmp.env }}</td>
+    <td>{{ tmp.enter_date }}</td>
+    <td>{{ tmp.exit_date }}</td>
+    <td>{{ tmp.notes }}</td>
+    <td><a style="color:blue" class="action" href="/tol/{{tmp.tol_id}}/summary"><b>{{ tmp.tol_id }}</a></td>
+  </tr>
+{% endfor %}
+</table>
+{% endblock %}

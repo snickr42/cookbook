@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Recipe - Home{% endblock %}</h1>
+{% endblock %}
+<form name"search_form">
+  <select id="field_drpdwn">
+    <option value="recipe">Recipe (Pie)</option>
+    <option value="description">Description (Fast)</option>
+  </select>
+  Search: <input type="text" id="search_txtbx"><br>
+</form>
+{% block content %}
+<table class="sortable" id="recipe_table">
+  <tr>
+    <th>Recipe</th>
+    <th>Description</th>
+    <th>Cook Time</th>
+    <th>Cook Temp</th>
+    <th>Servings</th>
+    <th>Origin</th>
+    <th>id</th>
+  </tr>
+{% for tmp in tbl %}
+  <tr>
+    <td>{{tmp.name}}</td>
+    <td>{{tmp.description}}</td>
+    <td>{{tmp.cooktime}}</td>
+    <td>{{tmp.cooktemp}}</td>
+    <td>{{tmp.servings}}</td>
+    <td>{{tmp.Origin}}</td>
+    <td><a style="color:blue" class="action" href="/recipe/summary/ref_id={{tmp.id}}"><b>{{tmp.id}}</a></td>
+  </tr>
+{% endfor %}
+</table>
+
+<!-- <script>
+function search_() {
+  var fld = document.getElementById("field_drpdwn").value;
+  var srch = document.getElementById("search_txtbx").value;
+  var url_str = "/st_lib/search_result/field=" + fld + "&search_str=" + srch;
+  location.replace(url_str)
+}
+</script> -->
+
+{% endblock %}
+
+
+
+

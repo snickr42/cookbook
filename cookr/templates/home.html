@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Costagliola/Riffitts Cookbook{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <a style="color:blue" class="action" href="/recipe"><b>Recipes</b></a> - Search all recipes
+  <div><a style="color:blue" class="action" href="/cookbook"><b>Cookbook</b></a> - Browse book collection
+  <div><a style="color:blue" class="action" href="/chef"><b>Chef</b></a> - Favorite chef recipes(Out of Service)
+  <div><a style="color:blue" class="action" href="/upld"><b>Upload</b></a> - Upload new recipes
+
+{% endblock %}
+

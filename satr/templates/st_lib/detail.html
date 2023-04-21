@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Test Library - {{sat_id}} - {{description}}{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<h2>SAT Table</h2>
+<table class="sortable" id="st_table">
+  <tr>
+    <th>ID</th>
+    <th>SAT_ID</th>
+    <th>Description</th>
+    <th>Priority</th>
+    <th>SYS_Impact</th>
+    <th>Admin_Support</th>
+    <th>FFA_Applciable</th>
+    <th>Run_Time(Min)</th>
+    <th>SAT_Version</th>
+    <th>Responsible_Group</th>
+    <th>Subject</th>
+	<th>Test Cycle</th>
+    <th>Notes</th>
+    <th>State</th>
+    <th>REF ID</th>
+    <th>Date</th>
+  </tr>
+{% for tmp in st_tbl %}
+  <tr>
+    <td>{{tmp.id }}</td>
+    <td>{{tmp.sat_id }}</td>
+    <td>{{tmp.description }}</td>
+    <td>{{tmp.priority }}</td>
+    <td>{{tmp.sys_impact }}</td>
+    <td>{{tmp.admin_support }}</td>
+    <td>{{tmp.ffa_applicable }}</td>
+    <td>{{tmp.run_time }}</td>
+    <td>{{tmp.sat_version }}</td>
+    <td>{{tmp.responsible_group }}</td>
+    <td>{{tmp.subject }}</td>
+	<td>{{tmp.test_cycle }}</td>
+    <td>{{tmp.notes }}</td>
+    <td class="{{tmp.state }}">{{tmp.state }}</td>
+    <td>{{tmp.ref_id }}</td>
+    <td>{{tmp.date }}</td>
+  </tr>
+{% endfor %}
+</table>
+<hr>
+
+<h2>Scope Table</h2>
+<table class="sortable" id="scope_table">
+  <tr>
+    <th>NE Release</th>
+  </tr>
+{% for tmp in scope_tbl %}
+  <tr>
+    <td>{{tmp.ne_release }}</td>
+  </tr>
+{% endfor %}
+</table>
+</hr>
+
+<h3>History Table</h3>
+<table class="sortable" id="hist_table">
+  <tr>
+    <th>ref_id</th>
+    <th>SAT_ID</th>
+    <th>Description</th>
+    <th>Status</th>
+    <th>date</th>
+    <th>ne_release</th>
+    <th>NE_ID</th>
+    <th>Tester</th>
+    <th>Test_User</th>
+    <th>Validation_Comments</th>
+    <th>TOL</th>
+    <th>tol_id</th>
+  </tr>
+{% for tmp in hist_tbl %}
+    <td>{{tmp.ref_id}}</td>
+    <td>{{tmp.SAT_ID}}</td>
+    <td>{{tmp.Description}}</td>
+    <td class="{{ tmp.Status }}">{{tmp.Status}}</td>
+    <td>{{tmp.date}}</td>
+    <td>{{tmp.ne_release}}</td>
+    <td>{{tmp.NE_ID}}</td>
+    <td>{{tmp.Tester}}</td>
+    <td>{{tmp.Test_User}}</td>
+    <td>{{tmp.Validation_Comments}}</td>
+    <td>{{tmp.TOL}}</td>
+    <td>{{tmp.tol_id}}</td>
+  </tr>
+{% endfor %}
+</table>
+</hr>
+
+{% endblock %}

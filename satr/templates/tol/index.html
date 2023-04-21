@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}TOL - Home{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<form id="btn_form" action="/tol/sys_release" method='GET'>
+<button id="enter_btn" type="submit" >View NetAct Release List</button>
+</form>
+
+<table class="sortable" id="tol_table">
+  <tr>
+    <th>TOL</th>
+    <th>Status</th>
+    <th>Enter</th>
+    <th>Exit</th>
+    <th>Site</th>
+    <th>Sys Release</th>
+    <th>Notes</th>
+    <th>TOL ID</th>
+  </tr>
+{% for tbl_tol in tbl %}
+  <tr>
+    <td><a style="color:blue" class="action" href="/tol/{{tbl_tol.tol_id}}/summary"><b>{{tbl_tol.TOL }}</a></td>
+    <td>{{ tbl_tol.status }}</td>
+    <td>{{ tbl_tol.enter_date }}</td>
+    <td>{{ tbl_tol.exit_date }}</td>
+    <td>{{ tbl_tol.Site }}</td>
+    <td>{{ tbl_tol.sys_release }}</td>
+    <td>{{ tbl_tol.notes }}</td>
+    <td>{{ tbl_tol.tol_id }}</td>
+  </tr>
+{% endfor %}
+</table>
+<script>
+function drpdwn_slct() {
+  var x = document.getElementById("tol_select");
+  var y = '/tol/'+x+'/summary/';
+  method="POST";
+}
+</script>
+{% endblock %}

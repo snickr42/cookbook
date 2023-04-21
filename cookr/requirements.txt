@@ -1,0 +1,11 @@
+os
+flask
+sqlite3
+click
+flask_login
+flask_wtf
+wtforms
+werkzeug
+flask_sqlalchemy
+pathlib
+pandas

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Recipe - Java{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<button onclick="get_stuff()">Search</button>
+
+<p id="java-id">text</p>
+
+<script>
+    function get_stuff(){
+    const java_url = "java";
+    const java_div = document.getElementById("java-id")
+    fetch(java_url, {"method":"POST","headers": {"Content-Type": "application/json"}})
+        .then(response => new_txt)
+    }
+    let java_div.innerHTML=new_txt
+</script>
+
+{% endblock %}
