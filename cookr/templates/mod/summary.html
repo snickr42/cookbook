@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}MODIFY - Summary{% endblock %}</h1>
+{% endblock %}
+
+<input type="text" id="search_txtbx">
+{% block content %}
+<h2> {{rec_tbl[1]}}:</h2>  
+<ul style="list-style-type:circle;">
+  <li><b>Description:</b> <input type="text" id="desc" value={{rec_tbl[2]}}></li>
+  <li><b>Cook Time:</b> <input type="text" id="time" value="{{rec_tbl[3]}} min"></li>
+  <li><b>Cook Temp:</b> <input type="text" id="temp" value="{{rec_tbl[4]}} F"</li>
+  <li><b>Servings:</b> <input type="text" id="serv" value={{rec_tbl[5]}}</li>
+  <li><b>Notes:</b> <input type="text" id="note" value={{rec_tbl[6]}}</li>
+  <li><b>Origin:</b> <input type="text" id="orig" value={{rec_tbl[7]}}</li>
+</ul>
+
+<div></div>
+<button id="submit_btn" type="submit" >Submit</button>
+<button id="cancel_btn" type="submit" >Cancel</button>
+
+
+<div></div>
+<h2> Ingredients:</h2>
+  {%for ing in ing_tbl %}
+    <ul style="list-style-type:circle;">
+	    <li><input type="text" id="quant" value={{ing.quantity}}> <input type="text" id="unit" value={{ing.unit2}}>   <input type="text" id="ingr" value={{ing.ingredient}}></li>
+    </ul>
+  {% endfor %}
+
+
+<div></div>
+<h2> Steps:</h2>
+  {%for stp in step_tbl %}
+  <ol style="list-style-type:none;">
+    <li><input type="text" id="desc" value={{stp.step}}>:   <input type="text" id="desc" value={{stp.description}}></li>
+  </ol>
+  {% endfor %}
+
+
+{% endblock %}

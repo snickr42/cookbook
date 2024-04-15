@@ -24,6 +24,9 @@ def create_app(test_config=None):
 #upld
     from . import upld
     app.register_blueprint(upld.bp)
+#mod
+    from . import modify
+    app.register_blueprint(modify.bp)
 
     app.add_url_rule('/', endpoint='index')
     return app

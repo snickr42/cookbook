@@ -38,13 +38,15 @@ def index():
 # @login_required
 @bp.route('/upld/file', methods=['POST'])
 def file_upld():
-
+    print(f'file_upld')
 
     f = request.files['upld_fl']
     if f:
         fl_tmp = secure_filename(f.filename)
         upload_file = '{}/{}'.format(current_app.config['UPLD_DIR'],fl_tmp)
         f.save(upload_file)
+        print(f'f: {f}')
+        print(f'upload_file: {upload_file}')
     else:
         err='ERROR: No file found'
         return redirect(url_for('.index'),flash('< None > {}'.format(err)))
@@ -53,7 +55,8 @@ def file_upld():
             save_fl='{}/{}'.format(current_app.config['UPLD_DIR'],f'{sht}_upld_tmp.csv')
             x2c(upload_file,sht,save_fl)
             upld_tr(save_fl,sht)
-
+            print(f'sheet: {sht}')
+            print(f'save_fl: {save_fl}')
         err='uploaded successfully'
         return redirect(url_for('.index'),flash('< {} > {}'.format(fl_tmp,err)))
     except:

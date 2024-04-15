@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Modify - Recipe{% endblock %}</h1>
+{% endblock %}
+
+
+{% block content %}
+<h2> {{rec_lst[1]}}:</h2>  
+<ul style="list-style-type:circle;">
+  <li><b>Description:</b> {{rec_lst[2]}}</li>
+  <li><b>Cook Time:</b> {{rec_lst[3]}} min</li>
+  <li><b>Cook Temp:</b> {{rec_lst[4]}} F</li>
+  <li><b>Servings:</b> {{rec_lst[5]}}</li>
+  <li><b>Notes:</b> {{rec_lst[6]}}</li>
+  <li><b>Origin:</b> {{rec_lst[7]}}</li>
+</ul>
+
+<div></div>
+<button id="mod_btn" type="submit" >Edit</button>
+
+
+<div></div>
+<h2> Ingredients:</h2>
+  {%for ing in ing_arr %}
+    <ul style="list-style-type:circle;">
+	    <li>{{ing.quantity}} {{ing.unit2}}    {{ing.ingredient}}</li>
+    </ul>
+  {% endfor %}
+
+
+<div></div>
+<h2> Steps:</h2>
+  {%for stp in step_arr %}
+  <ol style="list-style-type:none;">
+    <li>{{stp.step}}:   {{stp.description}}</li>
+  </ol>
+  {% endfor %}
+
+
+{% endblock %}

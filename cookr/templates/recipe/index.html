@@ -3,6 +3,7 @@
 {% block header %}
   <h1>{% block title %}Recipe - Home{% endblock %}</h1>
 {% endblock %}
+{% block content %}
 <form name"search_form">
   <select id="field_drpdwn">
     <option value="recipe">Recipe (Pie)</option>
@@ -10,7 +11,7 @@
   </select>
   Search: <input type="text" id="search_txtbx"><br>
 </form>
-{% block content %}
+
 <table class="sortable" id="recipe_table">
   <tr>
     <th>Recipe</th>

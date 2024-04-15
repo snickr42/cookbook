@@ -1,0 +1,18 @@
+nohup: ignoring input
+<Config {'ENV': 'production', 'DEBUG': False, 'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'SECRET_KEY': 'you-will-never-guess', 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': None, 'JSON_SORT_KEYS': None, 'JSONIFY_PRETTYPRINT_REGULAR': None, 'JSONIFY_MIMETYPE': None, 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'DATABASE': '/home/nich/cookbook/instance/recipe.db', 'UPLD_DIR': '/home/nich/cookbook/instance/upld'}>
+ * Serving Flask app 'cookr'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.68.65:5000
+[33mPress CTRL+C to quit[0m
+192.168.68.72 - - [12/Apr/2024 12:02:12] "GET /recipe/summary/ref_id=1 HTTP/1.1" 200 -
+192.168.68.72 - - [12/Apr/2024 12:02:12] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+192.168.68.72 - - [12/Apr/2024 12:02:12] "[36mGET /static/sorttable.js HTTP/1.1[0m" 304 -
+192.168.68.72 - - [12/Apr/2024 12:02:16] "GET /recipe/summary/ref_id=1 HTTP/1.1" 200 -
+192.168.68.72 - - [12/Apr/2024 12:02:16] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+192.168.68.72 - - [12/Apr/2024 12:02:16] "[36mGET /static/sorttable.js HTTP/1.1[0m" 304 -
+192.168.68.72 - - [12/Apr/2024 12:02:28] "GET /recipe/summary/ref_id=1 HTTP/1.1" 200 -
+192.168.68.72 - - [12/Apr/2024 12:02:28] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+192.168.68.72 - - [12/Apr/2024 12:02:28] "[36mGET /static/sorttable.js HTTP/1.1[0m" 304 -
